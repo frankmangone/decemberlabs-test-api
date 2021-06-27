@@ -1,9 +1,6 @@
-# --------------
-DecemberLabs API Test
-# --------------
+## DecemberLabs API Test
 
 # 1. Introduction
-# ----------------------------------------------------------
 In order to start using this API in a development environment:
   1) Make sure to have a working installation of PostgreSQL
   2) Install gems
@@ -40,7 +37,6 @@ In order to make requests to the API, it's possible to use cURL. The following c
 
 
 # 2. Model
-# ----------------------------------------------------------
 Three entities are used in this work: User, Account, and Transaction.
 A User may have more than one account, and an Account may have many Transactions, connected both through account_to and account_from (since Transactions have both foreign keys).
 
@@ -71,7 +67,6 @@ The column date, account_to_id, and account_from_id, are indexed because of the 
 
 
 # 3. Parameters
-# ----------------------------------------------------------
 
 # 3.1 /transactions
 Returns an array of Transactions.
@@ -122,7 +117,6 @@ The Transaction save, withdraw from source account, and deposit into target acco
 
 
 # 4. Future work / Enhancements
-# ----------------------------------------------------------
   - Add more accepted currency codes. Right now, only EUR, USD, and UYU are accepted.
   - Add a minimum amount to transfer.
   - Abstract cache method to separate class for future reuse, with dynamic cache keys.
