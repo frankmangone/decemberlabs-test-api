@@ -3,12 +3,12 @@
 # 1. Introduction
 In order to start using this API in a development environment:
   1) Make sure to have a working installation of PostgreSQL
-  2) Install gems
-    $ bundle install
-  3) Create and populate the database:
-    $ rails db:create
-    $ rails db:migrate
-    $ rails db:seed
+  2) Install gems:
+  > $ bundle install
+  3) Create and populate the database: 
+  > $ rails db:create
+  > $ rails db:migrate
+  > $ rails db:seed
 
 This will create 3 test Users (testing1, testing2, testing3), each of which have 2 Accounts.
 The password for each user is 'Password.[i]', where [i] is the user number (for testing1, Password.1, and so on).
@@ -26,12 +26,10 @@ Where <user_id> must be a valid id from the created User records. The <token> mu
 In order to make requests to the API, it's possible to use cURL. The following commands make the corresponding requests:
 
   /transactions: 
-      $ curl -H "Authorization: Bearer <token>" \
-             -X GET "http://localhost:3000/transactions?<params>"
+      $ curl -H "Authorization: Bearer <token>" -X GET "http://localhost:3000/transactions?<params>"
 
   /transfer: 
-      $ curl -d '<body>' -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer <token>" \
-             -X POST "http://localhost:3000/transfer/"
+      $ curl -d '<body>' -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -X POST "http://localhost:3000/transfer/"
 
   Both <body> and <params> will be defined later in this file.
 
