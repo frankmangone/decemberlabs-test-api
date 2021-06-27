@@ -11,7 +11,7 @@ In order to start using this API in a development environment:
     $ rails db:seed
 
 This will create 3 test Users (testing1, testing2, testing3), each of which have 2 Accounts.
-The password for each user is 'Password.<i>', where <i> is the user number (for testing1, Password.1, and so on).
+The password for each user is 'Password.[i]', where [i] is the user number (for testing1, Password.1, and so on).
 
 This API has two endpoints:
   - GET  /transactions : lists transactions for the logged in user.
