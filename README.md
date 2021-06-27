@@ -124,7 +124,7 @@ The Transaction save, withdraw from source account, and deposit into target acco
   - Add a minimum amount to transfer.
   - Abstract cache method to separate class for future reuse, with dynamic cache keys.
   - Add pagination to /transactions result.
-  - Move business logic to interactors (ActiveInteractor) to create lean Models and Controllers.
+  - Move business logic (for example to interactors, see `active_interactor`) to create lean Models and Controllers.
   - Add better validation errors. In this example, they are treated very loosely, due to time constraints.
   - Implement user authentication.
   - Standarize response format.
