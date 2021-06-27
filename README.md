@@ -24,7 +24,7 @@ Both of this endpoints require the user to be logged in. Although an authenticat
 > 
 > ApplicationController.encode_token(user_id: [user_id])
 
-Where `[user_id]` must be a valid id from the created User records. The `[token]` must then be inserted into the request headers.
+Where `[user_id]` must be a valid id from the existen User records. The `[token]` must then be inserted into the request headers.
 
 In order to make requests to the API, it's possible to use *cURL*. The following commands make the corresponding requests:
 
@@ -78,7 +78,9 @@ This endpoint accepts the following parameters:
   - `source_account_id`: [id(integer)]
 
 To generate the ISO strings, in the console, you can run:
+
 > $ Time.now.utc.iso8601
+
 Dates can be passed in many different formats; a possible *enhancement* for the future could be to accept and correctly parse different formats.
 
 Parameters can be passed in the url as query params, as in the following example:
