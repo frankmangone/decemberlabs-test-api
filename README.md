@@ -7,7 +7,9 @@ In order to start using this API in a development environment:
   > $ bundle install
   3) Create and populate the database: 
   > $ rails db:create
+  > 
   > $ rails db:migrate
+  > 
   > $ rails db:seed
 
 This will create 3 test Users (testing1, testing2, testing3), each of which have 2 Accounts.
