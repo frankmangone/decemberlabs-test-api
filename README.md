@@ -126,6 +126,6 @@ The Transaction save, withdraw from source account, and deposit into target acco
   - Add pagination to /transactions result.
   - Move business logic (for example to interactors, see `active_interactor`) to create lean Models and Controllers.
   - Add better validation errors. In this example, they are treated very loosely, due to time constraints.
-  - Implement user authentication.
+  - Implement fully-fledged user authentication.
   - Standarize response format.
   - Tests.
