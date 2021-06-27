@@ -1,11 +1,11 @@
 class TransactionController < ApplicationController
   require 'net/http'
 
-  before_action :logged_in_user # Defined in ApplicationController
-  before_action :verify_logged_in
+  before_action :authenticate_user # Defined in ApplicationController
+  before_action :verify_authentication
 
   # GET /transactions
-  # Returns an array of transactions queried by (for logged in user):
+  # Returns an array of Transactions queried by (for logged in user):
   # @params source_account_id: integer
   # @params from: ISO date string
   # @params to:   ISO date string
@@ -21,6 +21,12 @@ class TransactionController < ApplicationController
   end
 
   # POST /transfer
+  # Returns the created Transaction upon success
+  # @params account_from: integer
+  # @params account_to: integer
+  # @params description: string
+  # @params amount: float
+  # @params date: ISO date string
   def create_transaction
     amount      = transfer_params['amount']
     description = transfer_params['description']
@@ -121,7 +127,7 @@ class TransactionController < ApplicationController
 
     # Verifies if there is a logged in user
     # @user is fetched in before_action logged_in_user
-    def verify_logged_in
+    def verify_authentication
       unless @user
         render json: { error: "Please log in to see your transactions" },
                    status: :unauthorized and return
