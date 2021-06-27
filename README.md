@@ -26,10 +26,10 @@ Where <user_id> must be a valid id from the created User records. The <token> mu
 In order to make requests to the API, it's possible to use cURL. The following commands make the corresponding requests:
 
   /transactions: 
-      $ curl -H "Authorization: Bearer <token>" -X GET "http://localhost:3000/transactions?<params>"
+  > $ curl -H "Authorization: Bearer <token>" -X GET "http://localhost:3000/transactions?<params>"
 
   /transfer: 
-      $ curl -d '<body>' -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -X POST "http://localhost:3000/transfer/"
+  > $ curl -d '<body>' -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -X POST "http://localhost:3000/transfer/"
 
   Both <body> and <params> will be defined later in this file.
 
