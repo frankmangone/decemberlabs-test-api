@@ -2,7 +2,8 @@
 DecemberLabs API Test
 # --------------
 
-# 1. Introduction ----------------------------------------------------------
+# 1. Introduction
+# ----------------------------------------------------------
 In order to start using this API in a development environment:
   1) Make sure to have a working installation of PostgreSQL
   2) Install gems
@@ -38,7 +39,8 @@ In order to make requests to the API, it's possible to use cURL. The following c
   Both <body> and <params> will be defined later in this file.
 
 
-# 2. Model -----------------------------------------------------------------
+# 2. Model
+# ----------------------------------------------------------
 Three entities are used in this work: User, Account, and Transaction.
 A User may have more than one account, and an Account may have many Transactions, connected both through account_to and account_from (since Transactions have both foreign keys).
 
@@ -68,7 +70,8 @@ The models have the following columns, in addition to created_at and updated_at 
 The column date, account_to_id, and account_from_id, are indexed because of the query requirements in the /transaction endpoint.
 
 
-# 3. Parameters ------------------------------------------------------------
+# 3. Parameters
+# ----------------------------------------------------------
 
 # 3.1 /transactions
 Returns an array of Transactions.
@@ -118,7 +121,8 @@ The exchange rates are fetched from the fixer.io API. The results are *cached*, 
 The Transaction save, withdraw from source account, and deposit into target account are executed as an atomic transaction, so that no imbalance exists as a final result (and money is neither created nor destroyed magically!).
 
 
-# 4. Future work / Enhancements --------------------------------------------
+# 4. Future work / Enhancements
+# ----------------------------------------------------------
   - Add more accepted currency codes. Right now, only EUR, USD, and UYU are accepted.
   - Add a minimum amount to transfer.
   - Abstract cache method to separate class for future reuse, with dynamic cache keys.
@@ -127,4 +131,4 @@ The Transaction save, withdraw from source account, and deposit into target acco
   - Add better validation errors. In this example, they are treated very loosely, due to time constraints.
   - Implement user authentication.
   - Standarize response format.
-  - Write tests.
+  - Tests.
