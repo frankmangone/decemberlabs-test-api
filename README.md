@@ -13,28 +13,28 @@ In order to start using this API in a development environment:
   > $ rails db:seed
 
 This will create 3 test Users (testing1, testing2, testing3), each of which have 2 Accounts.
-The password for each user is 'Password.[i]', where [i] is the user number (for testing1, Password.1, and so on).
+The password for each user is 'Password.[i]', where `[i]` is the user number (for testing1, Password.1, and so on).
 
 This API has two endpoints:
   - GET  /transactions : lists transactions for the logged in user.
   - POST /transfer : makes a transaction from a source account, to a target account.
 
-Both of this endpoints require the user to be logged in. Although an authentication mechanism was not fully implemented, the endpoints expect to receive a JWT. To obtain this token, it is possible to fake this token, by running going into the rails console, and running:
+Both of this endpoints require the user to be logged in. Although an authentication mechanism was not fully implemented, the endpoints expect to receive a JWT. To obtain this token, it is possible to produce one by going into the rails console, and running:
 > $ rails c
 > 
-> ApplicationController.encode_token(user_id: <user_id>)
+> ApplicationController.encode_token(user_id: [user_id])
 
-Where `<user_id>` must be a valid id from the created User records. The `<token>` must then be inserted into the request headers.
+Where `[user_id]` must be a valid id from the created User records. The `[token]` must then be inserted into the request headers.
 
 In order to make requests to the API, it's possible to use *cURL*. The following commands make the corresponding requests:
 
   /transactions: 
-  > $ curl -H "Authorization: Bearer <token>" -X GET "http://localhost:3000/transactions?<params>"
+  > $ curl -H "Authorization: Bearer [token]" -X GET "http://localhost:3000/transactions?[params])"
 
   /transfer: 
-  > $ curl -d '<body>' -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -X POST "http://localhost:3000/transfer/"
+  > $ curl -d '[body]' -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer [token]" -X POST "http://localhost:3000/transfer/"
 
-Both `<body>` and `<params>` will be defined later in this file.
+Both `[body]` and `[params]` will be defined later in this file.
 
 
 # 2. Model
