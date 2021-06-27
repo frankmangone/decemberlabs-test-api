@@ -1,9 +1,6 @@
 class User < ApplicationRecord
-  include BCrypt
-
+  has_secure_password
   has_many :accounts, dependent: :destroy
-
-  attr_accessor :password
 
   PASSWORD_FORMAT = /\A
     (?=.*\d)           # Must contain a digit
@@ -15,9 +12,4 @@ class User < ApplicationRecord
                        length: { minimum: 8 }, 
                        format: { with: PASSWORD_FORMAT }
 
-  after_validation :hash_password, on: :create
-
-  def hash_password
-    self.password_hash = Password.create(self.password)
-  end
 end
