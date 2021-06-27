@@ -66,7 +66,7 @@ The models have the following columns, in addition to created_at and updated_at 
 The column date, account_to_id, and account_from_id, are indexed because of the query requirements in the /transaction endpoint.
 
 
-# 3. Parameters
+# 3. Endpoints
 
 # 3.1 /transactions
 Returns an array of Transactions.
