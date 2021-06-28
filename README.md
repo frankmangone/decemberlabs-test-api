@@ -24,7 +24,7 @@ Both of this endpoints require the user to be logged in. Although an authenticat
 > 
 > ApplicationController.encode_token(user_id: [user_id])
 
-Where `[user_id]` must be a valid id from the existen User records. The `[token]` must then be inserted into the request headers.
+Where `[user_id]` must be a valid id from the existing User records. The `[token]` must then be inserted into the request headers.
 
 In order to make requests to the API, it's possible to use *cURL*. The following commands make the corresponding requests:
 
