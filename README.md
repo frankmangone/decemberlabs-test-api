@@ -86,7 +86,7 @@ Dates can be passed in many different formats; a possible *enhancement* for the 
 Parameters can be passed in the url as query params, as in the following example:
   "http://localhost:3000/transactions?from=2021-06-24T00:00:00.000Z&to=2021-06-26T00:00:00.000Z&source_account_id=1"
 
-The endpoint also querys by accounts belonging to the logged in user, so only the Transactions whose account_from OR account_to belong to the current user will be shown.
+The endpoint also queries by accounts belonging to the logged in user, so only the Transactions whose account_from OR account_to belong to the current user will be shown.
 
 # 3.2 /transfer
 Creates a Transaction from a source account to a target account.
